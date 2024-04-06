@@ -1,0 +1,6 @@
+[Update]: Completed Homework 01
+
+Time spent: 3 hrs
+
+- Re-wrote the index.old.html file into JS in the app.js file
+- could not find a way to make the <p> in bold in JS
