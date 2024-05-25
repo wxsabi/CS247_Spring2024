@@ -1,56 +1,32 @@
-import trashIcon from './assets/trash_icon.svg';
 import React from 'react';
+import { useState } from 'react';
+import trashIcon from './assets/trash_icon.svg';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import './App.css';
 
-class App extends React.Component {
-  constructor(props) { 
-    super(props);
-    this.state = {
-      tasks: [],
-      newTask: '',
-    };
-    this.inputRef = React.createRef();
-  }
+function App() {
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState('');
+  const inputRef = React.createRef();
 
-  componentDidMount() {
-    this.inputRef.current.focus();
-  }
-
-  addTask = (e) => {
+  function addTask(e) {
     e.preventDefault();
-    const task = {
-      id: Date.now(),
-      text: this.state.newTask,
-      completed: false,
-    };
-    this.setState({
-      tasks: [task, ...this.state.tasks],
-      newTask: '',
-    }, () => this.inputRef.current.focus());
-  };
+    const task = { id: Date.now(), text: newTask, completed: false };
+    setTasks([...tasks, task]);
+    setNewTask('');
+    inputRef.current.focus();
+  }
 
-  completeTask = (id) => {
-    this.setState({
-      tasks: this.state.tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      ),
-    });
+  function completeTask(id) {
+    setTasks(tasks.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)));
     setTimeout(() => {
-      this.setState({
-        tasks: this.state.tasks.filter((task) => task.id !== id),
-      });
+      setTasks(tasks.filter((task) => task.id !== id));
     }, 4000);
-  };
+  }
 
-  deleteTask = (id) => {
-    this.setState({
-      tasks: this.state.tasks.filter((task) => task.id !== id),
-    });
-  };
-
-  render() {
+  function deleteTask(id) {
+    setTasks(tasks.filter((task) => task.id !== id));
+  }
     return (
       <>
         <div>
@@ -129,9 +105,8 @@ class App extends React.Component {
         <p className="read-the-docs">
           My mind is blown with Vite + React, it's really cool!
         </p>
-      </>
-    );
-  }
+    </>
+  );
 }
 
 export default App;

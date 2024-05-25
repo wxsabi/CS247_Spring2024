@@ -1,0 +1,96 @@
+/* * {
+  border: 1px solid black;
+} */
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.cardtitle {
+  position: relative;
+  top: -30px;
+}
+
+.card {
+  padding: 2em;
+  background-color: gray;
+  margin: 10px;
+}
+
+/* .cardcontainer { 
+  display: flex;
+} */
+
+.inputdiv { 
+  position: relative;
+  top: -30px;
+  /* display: flex; */
+}
+
+.tasklistdiv {
+  position: relative;
+  top: -30px;
+  margin-top: 20px;
+  width: 550px;
+  height: 250px;
+}
+
+input {
+  margin-right: 5px;
+  width: 100%;
+  font-size: 110%;
+}
+
+.inputcheckbox {
+  width: auto;
+}
+
+form {
+  display: flex;
+}
+
+.divwithtext {
+  margin-left: 3px;
+}
+
+.notasksimage {
+  width: 35%;
+}
+.trashbutton {
+  background-color: #888;
+}
+
+.read-the-docs {
+  color: #888;
+}
