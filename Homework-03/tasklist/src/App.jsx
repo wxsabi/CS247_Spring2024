@@ -1,32 +1,56 @@
-import React from 'react';
-import { useState } from 'react';
 import trashIcon from './assets/trash_icon.svg';
+import React from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
+import './App.css';
 
-function App() {
-  const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState('');
-  const inputRef = React.createRef();
+class App extends React.Component {
+  constructor(props) { 
+    super(props);
+    this.state = {
+      tasks: [],
+      newTask: '',
+    };
+    this.inputRef = React.createRef();
+  }
 
-  function addTask(e) {
+  componentDidMount() {
+    this.inputRef.current.focus();
+  }
+
+  addTask = (e) => {
     e.preventDefault();
-    const task = { id: Date.now(), text: newTask, completed: false };
-    setTasks([...tasks, task]);
-    setNewTask('');
-    inputRef.current.focus();
-  }
+    const task = {
+      id: Date.now(),
+      text: this.state.newTask,
+      completed: false,
+    };
+    this.setState({
+      tasks: [task, ...this.state.tasks],
+      newTask: '',
+    }, () => this.inputRef.current.focus());
+  };
 
-  function completeTask(id) {
-    setTasks(tasks.map((task) => (task.id === id ? { ...task, completed: !task.completed } : task)));
+  completeTask = (id) => {
+    this.setState({
+      tasks: this.state.tasks.map((task) =>
+        task.id === id ? { ...task, completed: !task.completed } : task
+      ),
+    });
     setTimeout(() => {
-      setTasks(tasks.filter((task) => task.id !== id));
+      this.setState({
+        tasks: this.state.tasks.filter((task) => task.id !== id),
+      });
     }, 4000);
-  }
+  };
 
-  function deleteTask(id) {
-    setTasks(tasks.filter((task) => task.id !== id));
-  }
+  deleteTask = (id) => {
+    this.setState({
+      tasks: this.state.tasks.filter((task) => task.id !== id),
+    });
+  };
+
+  render() {
     return (
       <>
         <div>
@@ -105,8 +129,9 @@ function App() {
         <p className="read-the-docs">
           My mind is blown with Vite + React, it's really cool!
         </p>
-    </>
-  );
+      </>
+    );
+  }
 }
 
 export default App;
