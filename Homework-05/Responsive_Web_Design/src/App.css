@@ -1,42 +1,316 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+
+.page_content {
+  background-color: #ffffff;
+  color: black;
+  text-align: left;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+h3 {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 2px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+#bottom_half {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-around;  */
+}
+
+.project_slots{
+  padding: 10px;
+  /* flex: 1 0 200px; */
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+
+  #root {
+    background-color: #d6d6d6;
+    min-width: 1200px;
+    max-width: 1600px; /* This seemed like a good idea :) */
+    height: 800px;
+    margin: 0 auto;
+    padding: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  #padding_div {
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    /* margin-top: -20px; */
+    border-top: 5px solid white;
+  }
+
+  #top_half {
+    display: flex;
+  }
+
+  #lefty_div {
+    flex: 60%;
+    min-width: 600px;
+    display:contents;
+    /* padding: 10px; */
+    /* border: 1px solid black; */
+  }
+
+  #righty_div {
+    flex: 40%;
+    padding-top: 20px;
+    max-width: 250px;
+    /* border: 1px solid black; */
+  }
+
+  #top_nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #484a47;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 27px;
+  }
+
+  #top_nav ul {
+    list-style-type: none;
+    margin-top: 1px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #top_nav li {
+    float: left;
+  }
+
+  #top_nav li.right {
+    float: right;
+  }
+
+  #top_nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    text-decoration: none;
+  }
+
+  #top_nav li a:hover {
+    border-bottom: 4px solid #c751ff;
+  }
+
+  #home_icon_li{
+    display: flex;
+  }
+
+  #home_icon_img{
+    padding-left: 20px;
+  }
+
+  #home_icon_a{
+    margin-left: -15px;
+  }
+
+  #menu_toggle {
+    display: none;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/* Laptop */
+@media (min-width: 800px) and (max-width: 1199px) {
+  #root {
+    background-color: #d6d6d6;
+    min-width: 800px;
+    max-width: 1199px; /* This seemed like a good idea :) */
+    height: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  #padding_div {
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    /* margin-top: -20px; */
+    border-top: 5px solid white;
+  }
+
+  #top_half {
+    display: flex;
+  }
+
+  #lefty_div {
+    flex: 60%;
+    min-width: 600px;
+    display:contents;
+    /* padding: 10px; */
+    /* border: 1px solid black; */
+  }
+
+  #righty_div {
+    flex: 40%;
+    padding-top: 20px;
+    max-width: 250px;
+    /* border: 1px solid black; */
+  }
+
+  #top_nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #484a47;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 27px;
+  }
+
+  #top_nav ul {
+    list-style-type: none;
+    margin-top: 1px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #top_nav li {
+    float: left;
+  }
+
+  #top_nav li.right {
+    float: right;
+  }
+
+  #top_nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    text-decoration: none;
+    
+  }
+
+  #top_nav li a:hover {
+    border-bottom: 4px solid #c751ff;
+  }
+
+  #home_icon_li{
+    display: flex;
+  }
+
+  #home_icon_img{
+    padding-left: 20px;
+  }
+
+  #home_icon_a{
+    margin-left: -15px;
+  }
+
+  #menu_toggle {
+    display: none;
   }
 }
 
-.card {
-  padding: 2em;
-}
+/* Mobile */
+@media (max-width: 400px) {
+  #root {
+    background-color: #d6d6d6;
+    max-width: 400px; /* This seemed like a good idea :) */
+    height: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
 
-.read-the-docs {
-  color: #888;
+  #padding_div {
+    background-color: #ffffff;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    /* margin-top: -20px; */
+    border-top: 5px solid white;
+  }
+
+  #top_half {
+    display: flex;
+  }
+
+  #lefty_div {
+    flex: 60%;
+    min-width: 600px;
+    /* padding: 10px; */
+    /* border: 1px solid black; */
+  }
+
+  #righty_div {
+    flex: 40%;
+    padding-top: 20px;
+    max-width: 250px;
+    /* border: 1px solid black; */
+  }
+
+  #top_nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #484a47;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 27px;
+  }
+
+  #top_nav ul {
+    list-style-type:none;
+    margin-top: 1px;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  #top_nav li {
+    float: left;
+  }
+
+  #top_nav li.right {
+    float: right;
+  }
+
+  #top_nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 3px;
+    text-decoration: none;
+  }
+
+  #top_nav li a:hover {
+    border-bottom: 4px solid #c751ff;
+  }
+
+  #home_icon_li{
+    display: flex;
+  }
+
+  #home_icon_img{
+    padding-left: 20px;
+  }
+
+  #home_icon_a{
+    margin-left: -15px;
+  }
+
+  .project_slots img{
+    padding: 6px;
+    max-width: 150px; 
+    max-height: 150px;
+    /* flex: 1 0 200px; */
+  }
+  #menu-div {
+    display: none;
+  }
+  
+  #menu-div.open {
+    display: block;
+  }
 }
